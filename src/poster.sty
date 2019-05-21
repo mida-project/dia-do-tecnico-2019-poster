@@ -1,0 +1,98 @@
+\NeedsTeXFormat{LaTeX2e}[2005/12/01]
+\ProvidesPackage{poster}[2018/09/28 v1.0 poster package]
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{babel}
+\RequirePackage{lmodern}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{icomma}
+\RequirePackage{csquotes}
+\RequirePackage{xpatch}
+\RequirePackage[%
+  style = abnt,%
+  natbib = true,%
+  uniquename = init,%
+  giveninits,%
+]{biblatex}
+\RequirePackage{beamerposter}
+
+\definecolor{BlackBlue}{RGB}{44, 62, 80}
+\definecolor{PosterBlack}{RGB}{55, 52, 53}
+\definecolor{PosterBars}{RGB}{52, 152, 219}
+
+\iflanguage{english}{%
+  \newcommand*{\instmainname}{ITI}%
+  \newcommand*{\sourcename}{Source}%
+  \IfFileExists{english-abnt.lbx}{%
+    \typeout{biblatex-abnt warning: using default language file `english-abnt.lbx'}%
+  }{%
+    \typeout{biblatex-abnt warning: using local language file `abnt-english.lbx'}%
+    \DeclareLanguageMapping{english}{abnt-english}%
+  }%
+}{%
+  \newcommand*{\instmainname}{ITI}%
+  \newcommand*{\sourcename}{Fonte}%
+}
+
+\newcommand*{\email}[2][]{\inst{#1}\href{mailto:#2}{#2}}
+\newcommand*{\source}[1]{\par\small\sourcename:\space#1}
+\newcommand*{\sep}{,\space}
+\renewcommand*{\And}{\sep}
+
+\mode<presentation>{%
+  \usetheme{Pittsburgh}%
+  \usefonttheme[onlymath]{serif}%
+  \usebackgroundtemplate{\includegraphics[width = \paperwidth, height = \paperheight]{./logos/background}}%
+  \setbeamercolor*{title}{fg = black}%
+  \setbeamercolor*{title page}{fg = black}%
+  \setbeamercolor*{block title}{fg = PosterBlack, bg = PosterBars}%
+  \setbeamercolor*{structure}{fg = PosterBars}%
+  \setbeamercolor*{caption name}{fg = black}%
+  \setbeamercolor*{bibliography entry author}{fg = black}%
+  \setbeamercolor*{bibliography entry title}{fg = black}%
+  \setbeamercolor*{bibliography entry location}{fg = black}%
+  \setbeamercolor*{bibliography entry note}{fg = black}%
+  \setbeamerfont{title}{series = \bfseries}%
+  \setbeamerfont{institute}{size = \small}%
+  \setbeamertemplate{caption}[numbered]%
+  \setbeamertemplate{caption label separator}[endash]%
+  \setbeamertemplate{bibliography item}{\scalebox{1.5}{\pgfuseimage{beamericonarticle}}}%
+}
+
+\@ifpackageloaded{lmodern}{%
+  \DeclareFontFamily{OMX}{lmex}{}%
+  \DeclareFontShape{OMX}{lmex}{m}{n}{<->lmex10}{}%
+}{}
+
+\setlength{\biblabelsep}{\labelsep}
+\setlength{\bibitemsep}{\itemsep}
+\defbibenvironment{bibliography}{%
+  \list{\printfield[labelalphawidth]{labelalpha}}{%
+    \setlength{\leftmargin}{\labelwidth}%
+    \setlength{\labelsep}{\biblabelsep}%
+    \addtolength{\leftmargin}{\labelsep}%
+    \setlength{\itemsep}{\bibitemsep}%
+    \setlength{\parsep}{\bibparsep}%
+  }%
+  \renewcommand*{\makelabel}[1]{\hss##1}%
+}{\endlist}{\item}
+
+\hypersetup{%
+  breaklinks = true,%
+  colorlinks = true,%
+  citecolor = BlackBlue,%
+  filecolor = BlackBlue,%
+  linkcolor = BlackBlue,%
+  urlcolor = BlackBlue,%
+  pdfdisplaydoctitle = true,%
+  pdfpagelayout = SinglePage,%
+}
+
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+
+\renewcommand*{\normalfont}{\relax}
+
+\RequirePackage{silence}
+\WarningFilter{biblatex}{Patching footnotes failed}

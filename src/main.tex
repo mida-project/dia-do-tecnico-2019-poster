@@ -1,0 +1,206 @@
+\documentclass[final]{beamer}
+
+\PassOptionsToPackage{english, main = english}{babel}
+\PassOptionsToPackage{
+  size = custom,
+  width = 90,
+  height = 120,
+  scale = 1.5,
+  debug,
+}{beamerposter}
+
+\usepackage{poster}
+
+\AtBeginBibliography{\footnotesize}
+\addbibresource{bibliography.bib}
+
+\title{
+  Medical Imaging Diagnosis Assistant: \\ AI-Assisted Radiomics Framework User Validation
+}
+\subject{Medical Imaging}
+\author{
+  Francisco M. Calisto\inst{1}%
+  \And Hugo Lencastre\inst{1}%
+  \And Nuno J. Nunes\inst{1}%
+  \And Jacinto C. Nascimento\inst{2}%
+}
+\institute{
+  \inst{1}\instmainname, LAYSyS, Portugal%
+  \par\inst{2}ISR-Lisboa, LARSyS, Portugal%
+  \par e-mail(s): \email[1]{francisco.calisto@tecnico.ulisboa.pt}%
+                  \And\email[2]{hugo.lencastre@tecnico.ulisboa.pt}%
+                  \And\email[3]{nunojnunes@tecnico.ulisboa.pt}%
+                  \And\email[4]{jan@isr.tecnico.ulisboa.pt}%
+}
+\date{23/05/2019}
+
+\begin{document}
+
+\begin{frame}[t, fragile = singleslide]{}
+
+\begin{columns}[t]
+
+\begin{column}{0.02\textwidth}
+\end{column}
+
+\begin{column}{0.18\textwidth}
+\flushleft
+\includegraphics[width = 0.8\columnwidth]{./logos/logo001}
+\vspace*{\baselineskip}
+\includegraphics[width = 0.8\columnwidth]{./logos/logo002}
+\end{column}
+
+\begin{column}{0.6\textwidth}
+\titlepage
+\end{column}
+
+\begin{column}{0.18\textwidth}
+\flushright
+\includegraphics[width = 0.8\columnwidth]{./logos/logo003}
+\vspace*{\baselineskip}
+\includegraphics[width = 0.8\columnwidth]{./logos/logo004}
+\end{column}
+
+\begin{column}{0.02\textwidth}
+\end{column}
+
+\end{columns}
+
+\begin{columns}[t]
+
+\begin{column}{0.45\textwidth}
+
+\begin{block}{INTRODUCTION}
+
+Artificial Intelligence has the potential to alter many application domains fundamentally. One prominent example is clinical radiology. The literature hypothesizes that Deep Learning algorithms will profoundly affect the clinical workflow. In this work, we utilized the unprecedented opportunity presented by developing Radiomics to investigate how a \textit{Multi-Modality} Framework and AI could add value in the Medical Imaging (MI) chain, including improvements of workflow efficiency and quality, as well as reducing and preventing errors, or even variability.
+
+\end{block}
+
+\begin{block}{BACKGROUND}
+
+A vital component of this research will be the access to a significant number of clinical settings and radiologists~\cite{calisto2017mimbcdui, https://doi.org/10.13140/rg.2.2.16566.14403/1}. Our work, proposes a protocol and guidelines to validate and test the introduction of an {\it AI-Assisted} Framework with several clinical users. The goal of the test is to compare both current and novel AI approach, measuring the user performance, efficiency and efficacy. Also, we will use an \hyperlink{https://gaming.tobii.com/products/}{eye-tracking device} to track the participant's eye movements during patient diagnosis. The purpose of this framework is to involve an \textit{AI-Assisted} tool (\textit{Assistant}) into several MI technologies at an autonomous patient diagnosis level. For the Machine Learning (ML) and Deep Learning (DL) component we will use several technologies, promoting and feeding our Convolutional Neural Networks (CNN) and Deep Reenforcement Learning (DRL) techniques~\cite{maicas2017deep}. Other central component of our framework is a distributed-based \hyperlink{https://www.sciencedirect.com/topics/medicine-and-dentistry/picture-archiving-and-communication-system}{PACS} pairwise with ubicous web technologies and based on \textit{Open Source (OS)} libraries.
+
+\hfill
+
+List of used technologies that support our work:
+
+\begin{enumerate}
+\item \hyperlink{https://nodejs.org}{NodeJS};
+\item \hyperlink{https://cornerstonejs.org/}{CornerstoneJS}~\cite{hostetter2018integration};
+\item \hyperlink{https://www.orthanc-server.com/}{Orthanc}~\cite{Jodogne:ISBI2013};
+\end{enumerate}
+
+\hfill
+
+\end{block}
+
+\end{column}
+
+\begin{column}{0.45\textwidth}
+
+\begin{block}{METHODOLOGY}
+
+Participants will take part in the tests at our formed institution protocols (\textit{e.g.}, \hyperlink{http://hff.min-saude.pt/}{Hospital Fernando Fonseca (HFF)}). The validation of the framework will take place in a typical \textit{Radiology Room (RR)} environment and workflow (Figure~\ref{fig:fig001}). Note takers and data logger(s) will monitor the sessions for observation in the \textit{RR}, connected by screen recording feed. The test sessions will be recorded and further analyzed.
+
+\begin{figure}[!htb]
+\centering
+\caption{Artificial Intelligence (AI) supporting the Medical Imaging (MI) current situation with decision making as a second opinion to Radiologists. Starting at the image acquisition from each patient, to the phase of putting those images on a patient database. From there, Radiologists can examine each image and writing a final report. At this point, researchers can add a second opinion to support the medical decision with trained models of AI and autonomous reporting of the results.}
+\label{fig:fig001}
+\includegraphics[width = \columnwidth]{./figures/fig001}
+\source{\textcite{MIPDMSAI2019}.}
+\end{figure}
+
+We propose and measure a second opinion in regard to the current \textit{RR} situation (see our User Testing Guide~\cite{https://doi.org/10.13140/rg.2.2.16566.14403/1} for more details). The second opinion will take advantage of our AI trained models (\textit{Assistant}), as well as it reporting results. To measure efficiency and efficacy of our \textit{Assistant} we will use a set of scales. The scales are: (1) NASA-TLX; (2) SUS; and (3) DOTS.
+
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\begin{columns}[t]
+
+\begin{column}{0.945\textwidth}
+
+\begin{block}{FRAMEWORK}
+
+%TODO
+The next Figures~\ref{fig:fig002}, \ref{fig:fig003} e \ref{fig:fig004} are samples of our working framework:
+
+\begin{column}[T]{0.33\textwidth}
+\begin{figure}[!htb]
+\centering
+\caption{}
+\label{fig:fig002}
+\includegraphics[width = 0.75\columnwidth]{./figures/fig002}
+\source{}
+\end{figure}
+\end{column}
+{\color{PosterBars}\vrule width 1.5pt}
+\begin{column}[T]{0.33\textwidth}
+\begin{figure}[!htb]
+\centering
+\caption{}
+\label{fig:fig003}
+\includegraphics[width = 0.75\columnwidth]{./figures/fig003}
+\source{}
+\end{figure}
+\end{column}
+{\color{PosterBars}\vrule width 1.5pt}
+\begin{column}[T]{0.33\textwidth}
+\begin{figure}[!htb]
+\centering
+\caption{}
+\label{fig:fig004}
+\includegraphics[width = 0.75\columnwidth]{./figures/fig004}
+\source{}
+\end{figure}
+\end{column}
+
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\begin{columns}[t]
+
+\begin{column}{0.45\textwidth}
+
+\begin{block}{FUTURE WORK AND CONCLUSIONS}
+
+% TODO
+Our work is a first attempt to test the potential of radiomics in a real-world clinical scenario. More than answering our research questions it opens a number of new avenues for further investigation. This research leverages on previous work implementing DLR for active breast lesion detection. However, integrating the front and back ends of the pipeline requires a lot of engineering work. For effective clinical application our work requires a proper clinical trial procedure which is out of the scope of a poster. This also raises many important ethical issues and consequences to be addressed by the community. Ultimately, we believe there is significant room for future investigations - to which this work is an important but only initial step - and we hope to see further exploration on the topic.
+
+\end{block}
+
+\begin{block}{ACKNOWLEDGEMENTS}
+\footnotesize
+Support received for the development of this work and participation in this event:
+\vfill
+\includegraphics[height = 29mm]{./logos/logo005}
+\hspace*{5mm}
+\includegraphics[height = 29mm]{./logos/logo006}
+\hspace*{5mm}
+\includegraphics[height = 29mm]{./logos/logo007}
+\hspace*{5mm}
+\includegraphics[height = 29mm]{./logos/logo008}
+\hspace*{5mm}
+\includegraphics[height = 29mm]{./logos/logo009}
+\end{block}
+
+\end{column}
+
+\begin{column}{0.45\textwidth}
+
+\begin{block}{REFERENCES}
+\printbibliography[heading = none]
+\end{block}
+
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+\end{document}
